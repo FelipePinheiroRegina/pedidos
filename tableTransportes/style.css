@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    /* FONTS */
+    --font-inter: "Inter", sans-serif;
+
+    /* CORS */
+    --blue-500: #464994;
+    --blue-300: #9AA6E2;
+    --blue-100: #DBE1FF;
+}
+
+body {
+    font-family: var(--font-inter);
+    font-size: 1.8rem;
+}
+
+.app {
+    max-width: 40rem;
+    margin: auto;
+    border: 1px solid black;
+    padding: 2rem;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.input-conf {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    font-weight: bold;
+}
+
+input {
+    background-color: var(--blue-100);
+    border: none;
+    border-bottom: 2px solid var(--blue-500);
+}
+
+input, button {
+    padding: 1rem 1rem;
+    font-size: 1.8rem;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    place-content: center;
+    gap: .5rem;
+
+    height: 5rem;
+    background-color: var(--blue-500);
+    border: none;
+    border-radius: .8rem;
+    color: var(--blue-100);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.name-trans {
+    margin: 2rem 0rem;
+}
+
+.name-trans h1 {
+    font-weight: 300;
+    padding: 0rem 1.5rem;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+table td, th {
+    border: 1px solid black;
+    font-weight: bold;
+    padding: 1rem .5rem;
+}
+
+table th {
+    background-color: var(--blue-100);
+}
+
+table tr:nth-child(even) {
+    background-color: var(--blue-100);
+}
+
+.check-list i {
+    padding: .5rem;
+    background-color: var(--blue-500);
+}
+
+.check {
+    background-color: greenyellow;
+}
