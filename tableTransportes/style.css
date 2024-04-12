@@ -100,7 +100,8 @@ button:hover {
     background-color: var(--blue-300);
 }
 
-.check-list > img {
+.check-list > i {
+    font-size: ;
     border-radius: .8rem;
     padding: 1rem;
     background-color: #464994;
@@ -108,7 +109,7 @@ button:hover {
     cursor: pointer;
 }
 
-.check-list.checked > img {
+.check-list.checked > i {
     background-color: greenyellow;
 }
 

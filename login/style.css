@@ -39,8 +39,9 @@ header {
     font-size: 2rem;
 }
 
-header > img {
-    width: 4rem;
+header > i {
+    font-size: 4rem;
+    font-weight: bold;
 }
 
 form {
