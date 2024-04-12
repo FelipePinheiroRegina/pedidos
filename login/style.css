@@ -22,22 +22,15 @@ body {
 
 
 #log {
-    display: grid;
-    grid-template-rows: 35% 1fr 1fr;
-    place-items: center;
-    margin: auto;
+    margin: 5rem auto;
     max-width: 35rem;
     height: 40rem;
 }
 
-#log > img {
-    width: 20rem;
-    height: 20rem;
-    filter: blur(.1rem);
-}
 header {
     display: flex;
     align-items: center;
+    justify-content: center;
     font-size: 2rem;
     margin-bottom: 2rem;  
 }
