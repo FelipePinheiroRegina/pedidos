@@ -23,16 +23,17 @@ body {
 }
 
 .app {
+    position: relative;
     max-width: 40rem;
     margin: auto;
     border: 1px solid black;
     padding: 2rem;
 }
 
-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.back {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
 }
 
 .input-conf {
@@ -40,6 +41,7 @@ header {
     flex-direction: column;
     gap: 1.6rem;
     font-weight: bold;
+    max-width: 65%;
 }
 
 input {
