@@ -44,6 +44,11 @@ header h2 {
 }
 
 button {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    place-content: center;
+
     height: 5rem;
     padding: 1rem 1rem;
 

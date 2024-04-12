@@ -67,6 +67,11 @@ form input {
 }
 
 form button {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    place-content: center;
+    
     background-color: var(--blue-500);
     border: none;
     border-radius: .8rem;
