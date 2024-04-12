@@ -17,26 +17,29 @@
 }
 
 body {
-    font-family: var(--font-inter)
+    font-family: var(--font-inter)  
 }
+
 
 #log {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-
-    margin: 5rem auto;
-    max-width: 40rem;
+    display: grid;
+    grid-template-rows: 35% 1fr 1fr;
+    place-items: center;
+    margin: auto;
+    max-width: 35rem;
     height: 40rem;
-    border: 1px solid rgba(128, 128, 128, 0.411);
 }
 
+#log > img {
+    width: 20rem;
+    height: 20rem;
+    filter: blur(.1rem);
+}
 header {
     display: flex;
     align-items: center;
     font-size: 2rem;
+    margin-bottom: 2rem;  
 }
 
 form {
@@ -45,6 +48,7 @@ form {
     gap: 1.6rem;
     width: 100%;
     padding: 0 2rem;
+
 }
 
 form, input::placeholder, button {

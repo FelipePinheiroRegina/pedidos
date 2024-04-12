@@ -65,6 +65,9 @@ button:hover {
 }
 
 button.check-request {
+    display: flex;
+    justify-self: center;
     margin-top: 2rem;
+    width: 50%;
 }
 
