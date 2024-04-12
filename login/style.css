@@ -39,11 +39,6 @@ header {
     font-size: 2rem;
 }
 
-header > i {
-    font-size: 4rem;
-    font-weight: bold;
-}
-
 form {
     display: flex;
     flex-direction: column;

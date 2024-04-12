@@ -15,6 +15,7 @@
     --blue-300: #9AA6E2;
     --blue-100: #DBE1FF;
     --green-300: #33D70A;
+    --red-300: #D70A12;
 }
 
 body {
@@ -23,42 +24,24 @@ body {
 }
 
 .app {
+    position: relative;
+
     max-width: 40rem;
     margin: auto;
     border: 1px solid black;
     padding: 2rem;
 }
 
-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.input-conf {
-    display: flex;
-    flex-direction: column;
-    gap: 1.6rem;
-    font-weight: bold;
-}
-
-input {
-    background-color: var(--blue-100);
-    border: none;
-    border-bottom: 2px solid var(--blue-500);
-}
-
-input, button {
-    padding: 1rem 1rem;
-    font-size: 1.8rem;
-}
-
 button {
+    position: absolute;
+    right: 1.5rem;
     display: flex;
     align-items: center;
-    place-content: center;
+    
     gap: .5rem;
-
+    
+    padding: 1rem 1rem;
+    font-size: 1.8rem;
     height: 5rem;
     background-color: var(--blue-500);
     border: none;
@@ -68,14 +51,15 @@ button {
     cursor: pointer;
 }
 
-.block-transportadora {
+.block-pedido {
     display: flex;
     flex-direction: column;
     margin: 2rem 0rem;
-    gap: 1.6rem;
+    gap: .5rem;
 }
 
-.block-transportadora > span {
+.block-pedido > span {
+   font-weight: bold;
    margin-left: 2rem;
    font-size: 3rem;
 }
@@ -124,13 +108,13 @@ button:hover {
     background-color: var(--blue-300);
 }
 
-.check-list > svg {
+.status > svg {
     border-radius: .8rem;
     padding: .8rem;
-    background-color: var(--blue-500);
+    background-color: var(--red-300);
     cursor: pointer;
 }
 
-.check-list.checked > svg {
+.status.checked > svg {
     background-color: var(--green-300);
 }

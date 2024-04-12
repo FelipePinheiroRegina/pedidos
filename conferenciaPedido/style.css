@@ -60,10 +60,6 @@ button {
     cursor: pointer;
 }
 
-button i {
-    font-size: 2rem;
-}
-
 button:hover {
     background-color: var(--blue-300);
 }

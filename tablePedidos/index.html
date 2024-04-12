@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <script type="module" src="script.js" defer></script>
+
+    <title>Pedido</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+     
+        <button>
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#DBE1FF" viewBox="0 0 256 256"><path d="M232,200a8,8,0,0,1-16,0,88.1,88.1,0,0,0-88-88H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48A8,8,0,0,1,85.66,61.66L51.31,96H128A104.11,104.11,0,0,1,232,200Z"></path></svg>
+            <span>Voltar</span>
+       </button>
+       
+
+        <div class="block-pedido">
+            <h3>Pedido</h3>
+            <span id="cod-pedido"> 00045874</span>
+        </div>
+
+        <div class="scrol">
+            <table>
+                <thead>
+                    <tr>
+                        <th>CAIXA</th>
+                        <th>DATA</th>
+                        <th>CONFERENTE</th>
+                        <th>STATUS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="caixa">1</td>
+                        <td  class="horas">10:26</td>
+                        <td class="conferente">Tiago</td>
+                        <td class="status checked">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="#DBE1FF" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="caixa">2</td>
+                        <td  class="data">--</td>
+                        <td class="conferente">--</td>
+                        <td class="status">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="#DBE1FF" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg>   
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
