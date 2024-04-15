@@ -87,14 +87,13 @@ thead {
 }
 
 table td, th {
-    border: 1px solid var(--blue-500);
+    border: 1px solid black;
     font-weight: bold;
-    padding: .5rem;
+    padding: 1rem;
 }
 
 table th {
-    height: 5rem;
-    width: 25%;
+    width: 33%;
     background-color: var(--blue-500);
     color: var(--blue-100);
 }

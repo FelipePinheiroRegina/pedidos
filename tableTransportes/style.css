@@ -22,7 +22,7 @@ body {
     font-size: 1.8rem;
 }
 
-.app {
+#app {
     position: relative;
     max-width: 40rem;
     margin: auto;
@@ -35,12 +35,15 @@ body {
     right: 1.5rem;
 }
 
-.input-conf {
+.input-check {
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
+
     font-weight: bold;
-    max-width: 65%;
+    text-transform: uppercase;
+    max-width: 100%;
+    padding-top: 1rem;
 }
 
 input {
@@ -69,22 +72,23 @@ button {
     cursor: pointer;
 }
 
-.block-transportadora {
+.block-transport {
     display: flex;
     flex-direction: column;
     margin: 2rem 0rem;
     gap: 1.6rem;
 }
 
-.block-transportadora > span {
+.block-transport > span {
    margin-left: 2rem;
    font-size: 3rem;
 }
 
 .scrol {
-    height: 40rem;
+    height: 30rem;
     overflow: hidden;
     overflow-y: scroll;
+    box-shadow: inset 0px -1px 5px rgba(0, 0, 0, 0.445);
 }
 
 ::-webkit-scrollbar {
@@ -104,15 +108,18 @@ thead {
    
 }
 
+tbody {
+    font-size: 1.6rem;
+    padding: 1rem;
+}
+
 table td, th {
-    border: 1px solid var(--blue-500);
+    border: 1px solid black;
     font-weight: bold;
-    padding: .5rem;
+    padding: 1rem .2rem;
 }
 
 table th {
-    height: 5rem;
-    width: 25%;
     background-color: var(--blue-500);
     color: var(--blue-100);
 }
@@ -125,13 +132,17 @@ button:hover {
     background-color: var(--blue-300);
 }
 
-.check-list > svg {
-    border-radius: .8rem;
-    padding: .8rem;
-    background-color: var(--blue-500);
+tbody .detalhes > i {
+    font-weight: bold;
     cursor: pointer;
 }
 
-.check-list.checked > svg {
-    background-color: var(--green-300);
+tbody .remove {
+    color: rgb(228, 35, 35);
+    cursor: pointer;
 }
+
+.thead-detalhes, .thead-remove {
+    font-size: 1rem;
+}
+
