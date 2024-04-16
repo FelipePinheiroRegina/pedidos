@@ -1,5 +1,5 @@
-export class Braspress{
-    pedidos = [
+export class Pedidos{
+    Braspress = [
         {
             "id": 54563,
             "qtdCx": 6,
@@ -26,10 +26,8 @@ export class Braspress{
             "contado": 0,
         }
     ]
-}
 
-export class Rodonaves{
-    pedidos = [
+    Rodonaves = [
         {
             "id": 55667,
             "qtdCx": 6,

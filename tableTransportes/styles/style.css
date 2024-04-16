@@ -15,7 +15,6 @@
     --blue-300: #9AA6E2;
     --blue-100: #DBE1FF;
     --green-300: #33D70A;
-    --red-300: #D70A12;
 }
 
 body {
@@ -23,24 +22,47 @@ body {
     font-size: 1.8rem;
 }
 
-.app {
+#app {
     position: relative;
-
-    max-width: 40rem;
+    max-width: 41rem;
     margin: auto;
     padding: 2rem;
 }
 
-button {
+.body-synthetic .back {
     position: absolute;
+    top: 1rem;
     right: 1.5rem;
+}
+
+.body-synthetic.input-check {
     display: flex;
-    align-items: center;
-    
-    gap: .5rem;
-    
+    flex-direction: column;
+    gap: 1.6rem;
+
+    font-weight: bold;
+    text-transform: uppercase;
+    max-width: 100%;
+    padding-top: 1rem;
+}
+
+.body-synthetic input {
+    background-color: var(--blue-100);
+    border: none;
+    border-bottom: 2px solid var(--blue-500);
+}
+
+.body-synthetic input, button {
     padding: 1rem 1rem;
     font-size: 1.8rem;
+}
+
+.body-synthetic button {
+    display: flex;
+    align-items: center;
+    place-content: center;
+    gap: .5rem;
+
     height: 5rem;
     background-color: var(--blue-500);
     border: none;
@@ -50,69 +72,82 @@ button {
     cursor: pointer;
 }
 
-.block-pedido {
+.body-synthetic.block-transport {
     display: flex;
     flex-direction: column;
     margin: 2rem 0rem;
-    gap: .5rem;
+    gap: 1.6rem;
 }
 
-.block-pedido > span {
-   font-weight: bold;
+.body-synthetic.block-transport > span {
    margin-left: 2rem;
    font-size: 3rem;
 }
 
-.scrol {
-    height: 40rem;
+.body-synthetic.scrol {
+    height: 30rem;
     overflow: hidden;
     overflow-y: scroll;
+    box-shadow: inset 0px -1px 5px rgba(0, 0, 0, 0.445);
 }
 
 ::-webkit-scrollbar {
    width: 1px;
 }
 
-table {
+.body-synthetic table {
     font-size: 1.4rem;
     width: 100%;
+    height: 100%;
     border-collapse: collapse;
     text-align: center;
 }
 
-thead {
+.body-synthetic thead {
     position: sticky;
     top: -1px;
    
 }
 
-table td, th {
-    border: 1px solid black;
-    font-weight: bold;
+.body-synthetic tbody {
+    font-size: 1.6rem;
     padding: 1rem;
 }
 
-table th {
-    width: 33%;
+.body-synthetic table td, th {
+    border: 1px solid black;
+    font-weight: bold;
+    padding: 1rem .2rem;
+}
+
+.body-synthetic table th {
     background-color: var(--blue-500);
     color: var(--blue-100);
 }
 
-table tbody > tr:nth-child(even) {
+.body-synthetic table tbody > tr:nth-child(even) {
     background-color: var(--blue-100);
 }
 
-button:hover {
+.body-synthetic button:hover {
     background-color: var(--blue-300);
 }
 
-.status > svg {
-    border-radius: .8rem;
-    padding: .8rem;
-    background-color: var(--red-300);
+.body-synthetic tbody .detalhes > i {
+    font-weight: bold;
     cursor: pointer;
 }
 
-.status.checked > svg {
-    background-color: var(--green-300);
+.body-synthetic tbody .remove {
+    color: rgb(228, 35, 35);
+    cursor: pointer;
 }
+
+.body-synthetic table .thead-detalhes, .thead-remove {
+    font-size: 1rem;
+}
+
+/* STYLE DATA ANALYTICS */
+
+
+

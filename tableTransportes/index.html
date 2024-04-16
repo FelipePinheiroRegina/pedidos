@@ -9,29 +9,30 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/analytics.css">
     
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <script type="module" src="/javascript/main.js" defer></script>
+    <script type="module" src="main.js" defer></script>
 
     <title>Transportadora</title>
 </head>
 <body>
     <div id="app">
-        <header>
+        <header class="body-synthetic">
             <button class="back">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#DBE1FF" viewBox="0 0 256 256"><path d="M232,200a8,8,0,0,1-16,0,88.1,88.1,0,0,0-88-88H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48A8,8,0,0,1,85.66,61.66L51.31,96H128A104.11,104.11,0,0,1,232,200Z"></path></svg>
                 <span>Voltar</span>
             </button>
         </header>
            
-        <div class="block-transport">
+        <div class="body-synthetic block-transport">
             <h3>Transportadora</h3>
             <span id="name-transport"> Braspress Ltda.</span>
             <span id="date">12/04/2024</span>
         </div>
 
-        <div class="scrol">
+        <div class="body-synthetic scrol">
             <table>
                 <thead>
                     <tr>
@@ -43,102 +44,57 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="detalhes"><i class="ph ph-magnifying-glass"></i></td>
-                        <td class="pedido">00054563</td>
-                        <td class="qtd-cx">4</td>
-                        <td class="contado">2</td>
-                        <td class="remove">
-                            <p>&times;</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="detalhes"><i class="ph ph-magnifying-glass"></i></td>
-                        <td class="pedido">00054563</td>
-                        <td class="qtd-cx">4</td>
-                        <td class="contado">2</td>
-                        <td class="remove">
-                            <p>&times;</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="detalhes"><i class="ph ph-magnifying-glass"></i></td>
-                        <td class="pedido">00054563</td>
-                        <td class="qtd-cx">4</td>
-                        <td class="contado">2</td>
-                        <td class="remove">
-                            <p>&times;</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="detalhes"><i class="ph ph-magnifying-glass"></i></td>
-                        <td class="pedido">00054563</td>
-                        <td class="qtd-cx">4</td>
-                        <td class="contado">2</td>
-                        <td class="remove">
-                            <p>&times;</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="detalhes"><i class="ph ph-magnifying-glass"></i></td>
-                        <td class="pedido">00054563</td>
-                        <td class="qtd-cx">4</td>
-                        <td class="contado">2</td>
-                        <td class="remove">
-                            <p>&times;</p>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="detalhes"><i class="ph ph-magnifying-glass"></i></td>
-                        <td class="pedido">00054563</td>
-                        <td class="qtd-cx">4</td>
-                        <td class="contado">2</td>
-                        <td class="remove">
-                            <p>&times;</p>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="detalhes"><i class="ph ph-magnifying-glass"></i></td>
-                        <td class="pedido">00054563</td>
-                        <td  class="qtd-cx">4</td>
-                        <td class="contado">2</td>
-                        <td class="remove">
-                            <p>&times;</p>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="detalhes"><i class="ph ph-magnifying-glass"></i></td>
-                        <td class="pedido">00054563</td>
-                        <td  class="qtd-cx">4</td>
-                        <td class="contado">2</td>
-                        <td class="remove">
-                            <p>&times;</p>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="detalhes"><i class="ph ph-magnifying-glass"></i></td>
-                        <td class="pedido">00054563</td>
-                        <td  class="qtd-cx">4</td>
-                        <td class="contado">2</td>
-                        <td class="remove">
-                            <p>&times;</p>
-                        </td>
-                    </tr>
+                    
                 </tbody>
             </table>
         </div>
 
-        <div class="input-check">
+        <div class="body-synthetic input-check">
             <label for="idpedido">Pedido</label>
-            <input type="number" name="pedido" id="idpedido">
-            <button>
+            <input type="text" name="pedido" id="idpedido">
+            <button id="confirm-request">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#DBE1FF" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg>
                 <span>Confirmar Pedido</span>
             </button>
+        </div>
+    </div>
+
+    <!------------------------------------------------------------------------------------------>
+    <!--                                MODAL ANALYTICS -->
+    <!------------------------------------------------------------------------------------------>
+    
+    <div class="analytics">
+     
+        <div class="card">
+            <span class="close">&times</span>
+            
+            <div class="block-pedido">
+                <h3>Pedido</h3>
+                <span id="cod-pedido"> 00045874</span>
+            </div>
+            <div class="scrol-analytics">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>CAIXA</th>
+                            <th>HORA</th>
+                            <th>CONFERENTE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="caixa">1</td>
+                            <td  class="horas">10:26</td>
+                            <td class="conferente">Tiago</td>
+                        </tr>
+                        <tr>
+                            <td class="caixa">1</td>
+                            <td  class="horas">10:26</td>
+                            <td class="conferente">Tiago</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </body>
