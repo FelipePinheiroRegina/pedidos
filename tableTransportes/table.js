@@ -22,11 +22,12 @@ export class TableData {
 
     onaddBox(value){
         const codAndBox = value.split('-')
-        console.log(codAndBox)
 
         this.pedidos.forEach(pedido => {
             if(pedido.id == codAndBox[0]){
                 pedido.contado += 1
+                pedido.cxs = pedido.cxs.append(codAndBox[1])
+                console.log(pedido)
                 this.update()
                 this.save()
             } 
