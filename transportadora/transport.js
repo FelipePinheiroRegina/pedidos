@@ -18,7 +18,8 @@ buttonTransport.addEventListener('click', event => {
     
     if(date == dateNow){
         localStorage.clear()
-        window.location.href = `tableTransportes/index.html?transport=${transport}`
+        window.history.replaceState({}, document.title, "/");
+        window.location.href = `pedidos/tableTransportes/index.html?transport=${transport}`
     } else {
         alert('No orders found')
     }

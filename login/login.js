@@ -7,7 +7,8 @@ buttonLogin.addEventListener('click', event => {
     const password = document.querySelector('#idpassword').value
 
     if(email === "admin" && password === "admin"){
-        window.location.href = "transportadora/index.html"
+        window.history.replaceState({}, document.title, "/");
+        window.location.href = "pedidos/transportadora/index.html"
     } else {
         alert('Unauthenticated user')
     }
