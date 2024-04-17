@@ -7,7 +7,7 @@ buttonLogin.addEventListener('click', event => {
     const password = document.querySelector('#idpassword').value
 
     if(email === "admin" && password === "admin"){
-        window.location.href = "pedidos/transportadora/index.html"
+        window.location.href = "https://felipepinheiroregina.github.io/pedidos/transportadora/index.html"
     } else {
         alert('Unauthenticated user')
     }

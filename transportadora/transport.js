@@ -18,7 +18,7 @@ buttonTransport.addEventListener('click', event => {
     
     if(date == dateNow){
         localStorage.clear()
-        window.location.href = `pedidos/tableTransportes/index.html?transport=${transport}`
+        window.location.href = `https://felipepinheiroregina.github.io/pedidos/tableTransportes/index.html?transport=${transport}`
     } else {
         alert('No orders found')
     }
