@@ -1,67 +1,76 @@
 export class Pedidos{
     Braspress = [
         {
-            "id": 54563,
+            "id": 53421,
             "qtdCx": 6,
             "contado": 0,
             "cxs": [],
+            "horas": [],
         },
-        {
-            "id": 54564,
-            "qtdCx": 10,
+        {   "id": 53467,
+            "qtdCx": 6,
             "contado": 0,
             "cxs": [],
+            "horas": [],
         },
-        {
-            "id": 54565,
-            "qtdCx": 3,
+        {   "id": 53388,
+            "qtdCx": 6,
             "contado": 0,
             "cxs": [],
+            "horas": [],
         },
         {
-            "id": 54566,
-            "qtdCx": 7,
+            "id": 53335,
+            "qtdCx": 6,
             "contado": 0,
             "cxs": [],
+            "horas": [],
         },
         {
-            "id": 54567,
-            "qtdCx": 4,
+            "id": 53331,
+            "qtdCx": 6,
             "contado": 0,
             "cxs": [],
+            "horas": [],
         }
     ]
 
     Rodonaves = [
         {
-            "id": 55667,
+            "id": 55558,
             "qtdCx": 6,
             "contado": 0,
             "cxs": [],
+            "horas": [],
         },
         {
-            "id": 12678,
-            "qtdCx": 10,
+            "id": 55556,
+            "qtdCx": 6,
             "contado": 0,
             "cxs": [],
+            "horas": [],
         },
         {
-            "id": 99778,
-            "qtdCx": 3,
+            "id": 55555,
+            "qtdCx": 6,
             "contado": 0,
             "cxs": [],
+            "horas": [],
         },
         {
-            "id": 56789,
-            "qtdCx": 7,
+            "id": 55554,
+            "qtdCx": 6,
             "contado": 0,
             "cxs": [],
+            "horas": [],
         },
         {
-            "id": 89034,
-            "qtdCx": 4,
+            "id": 55553,
+            "qtdCx": 6,
             "contado": 0,
             "cxs": [],
+            "horas": [],
         }
     ]
 }
+

@@ -4,6 +4,9 @@ import { transport } from "./main.js"
 export class TableData {
     constructor(root){
         this.root = document.querySelector(root)
+        
+        this.tableAnalytics = document.querySelector('.analytics table tbody')
+
         this.load()
     }
 
@@ -22,31 +25,44 @@ export class TableData {
 
     onaddBox(value){
         const codAndBox = value.split('-')
-
+        
         this.pedidos.forEach(pedido => {
             if(pedido.id == codAndBox[0]){
                 pedido.contado += 1
-                pedido.cxs = pedido.cxs.append(codAndBox[1])
+                pedido.cxs += codAndBox[1] + ';'
+                pedido.horas += this.formatHours() + ';'
                 console.log(pedido)
                 this.update()
                 this.save()
             } 
-        })
+        }) 
+       
     }
 
     delete(pedido){
         pedido.contado = 0
+        pedido.cxs = []
+        pedido.horas = []
         this.update()
         this.save()
     }
 
-    openModal(pedido){
-        document.querySelector('.analytics').classList.add('open')
+    formatHours(){
+        const data = new Date()
+        let horas = data.getHours()
+        let minutes = data.getMinutes()
+        
+        if(horas < 10){
+            horas = '0' + horas  
+        }
+
+        if(minutes < 10){
+            minutes = '0' + minutes
+        }
+        
+        return horas = `${horas}:${minutes}`
     }
 
-    requestAndBox(){
-        this.requestAndBox = []
-    }
 }
 
 export class TableView extends TableData {
@@ -54,7 +70,7 @@ export class TableView extends TableData {
         super(root)
        
         this.tbody = this.root.querySelector('tbody')
-       
+        
         this.update()
         this.addBox()
     }
@@ -80,7 +96,27 @@ export class TableView extends TableData {
             row.querySelector('.contado').textContent = pedido.contado
             
             row.querySelector('.detalhes').onclick = () => {
-                this.openModal(pedido)
+                this.removeAltrAnalytics()
+                if(pedido.cxs.length > 0){
+                    document.querySelector('#cod-pedido').innerHTML = pedido.id
+                    let caixa = pedido.cxs.split(';')
+                    let horas = pedido.horas.split(';')
+                    caixa.pop()
+                    horas.pop()
+                    
+                    for(let i = 0; i < caixa.length; i++){
+                        const row = this.createRowAnalytics()
+                        row.querySelector('.caixas').textContent = caixa[i]
+                        row.querySelector('.horas').textContent = horas[i]
+                        row.querySelector('.conferente').textContent = 'Tiago'
+                        this.tableAnalytics.append(row)
+                    }
+                    
+                    document.querySelector('.analytics').classList.add('open')
+                } else {
+                    alert('Você não beepou nenhuma caixa desse pedido ainda')
+                }
+                
             }
 
             row.querySelector('.remove').onclick = () => {
@@ -110,9 +146,27 @@ export class TableView extends TableData {
         return tr
     }
 
+    createRowAnalytics(){
+        const tr = document.createElement('tr')
+        
+        tr.innerHTML = `
+            <td class="caixas"></td>
+            <td class="horas"></td>
+            <td class="conferente">4</td>
+        `
+        return tr
+    }
+
     removeAlltr(){
         this.tbody.querySelectorAll('tr').forEach(tr => {
             tr.remove()
         })
     }
+
+    removeAltrAnalytics(){
+        this.tableAnalytics.querySelectorAll('tr').forEach(tr => {
+            tr.remove()
+        })
+    }
+    
 }
