@@ -84,7 +84,11 @@ body {
 }
 
 .body-synthetic.scrol {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
     height: 30rem;
+    width: 100%;
     overflow: hidden;
     overflow-y: scroll;
     box-shadow: inset 0px -1px 5px rgba(0, 0, 0, 0.445);
@@ -95,11 +99,11 @@ body {
 }
 
 .body-synthetic table {
-    font-size: 1.6rem;
-    width: 100%;
+    font-size: 1.4rem;
     border-collapse: collapse;
     text-align: center;
 }
+
 
 .body-synthetic thead {
     position: sticky;
@@ -110,7 +114,7 @@ body {
 .body-synthetic table td, th {
     border: 1px solid black;
     font-weight: bold;
-    padding: 1rem .2rem;
+    
 }
 
 .body-synthetic table th {
