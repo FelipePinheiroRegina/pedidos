@@ -2,10 +2,7 @@ import { TableView } from "./table.js"
 import "./modal.js"
 
 const buttonBack = document.querySelector('.back')
-buttonBack.addEventListener('click', event => {
-    window.history.replaceState({}, document.title, "/");
-    window.location.href = '/pedidos/transportadora/index.html'
-})
+buttonBack.onclick = () => {window.history.back()}
 
 const url = window.location.search
 const array = url.split('=')
