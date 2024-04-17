@@ -24,9 +24,9 @@ body {
 
 #app {
     position: relative;
-    max-width: 41rem;
+    max-width: 40rem;
     margin: auto;
-    padding: 2rem;
+    padding: 3rem;
 }
 
 .body-synthetic .back {
@@ -42,7 +42,6 @@ body {
 
     font-weight: bold;
     text-transform: uppercase;
-    max-width: 100%;
     padding-top: 1rem;
 }
 
@@ -96,9 +95,8 @@ body {
 }
 
 .body-synthetic table {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     width: 100%;
-    height: 100%;
     border-collapse: collapse;
     text-align: center;
 }
@@ -107,11 +105,6 @@ body {
     position: sticky;
     top: -1px;
    
-}
-
-.body-synthetic tbody {
-    font-size: 1.6rem;
-    padding: 1rem;
 }
 
 .body-synthetic table td, th {
@@ -142,12 +135,4 @@ body {
     color: rgb(228, 35, 35);
     cursor: pointer;
 }
-
-.body-synthetic table .thead-detalhes, .thead-remove {
-    font-size: 1rem;
-}
-
-/* STYLE DATA ANALYTICS */
-
-
 
