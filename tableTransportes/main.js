@@ -2,7 +2,7 @@ import { TableView } from "./table.js"
 import "./modal.js"
 
 const buttonBack = document.querySelector('.back')
-buttonBack.onclick = () => { window.location.href = "https://felipepinheiroregina.github.io/pedidos/tableTransportes/index.html"}
+buttonBack.onclick = () => { window.location.href = "pedidos/transportadora/index.html"}
 
 const url = window.location.search
 const array = url.split('=')
