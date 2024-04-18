@@ -108,11 +108,14 @@ body {
 .body-synthetic thead {
     position: sticky;
     top: -1px;
-   
 }
 
-.body-synthetic table td, th {
-    border: 1px solid black;
+.body-synthetic th {
+    padding: 1.2rem 1.2rem;
+}
+
+.body-synthetic table tr {
+    border: 1px solid rgba(0, 0, 0, 0.301);
     font-weight: bold;
     
 }

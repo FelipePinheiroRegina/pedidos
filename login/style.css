@@ -22,9 +22,12 @@ body {
 
 
 #app {
+    display: grid;
+    grid-template-columns: 1fr;
     margin: 5rem auto;
     max-width: 35rem;
     height: 40rem;
+    border: 1px solid rgb(194, 189, 189);
 }
 
 header {

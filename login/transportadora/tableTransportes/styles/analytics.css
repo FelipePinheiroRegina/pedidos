@@ -69,10 +69,13 @@
    
 }
 
-.analytics table td, th {
-    border: 1px solid black;
+.analytics table tr {
+    border: 1px solid rgba(0, 0, 0, 0.178);
     font-weight: bold;
-    padding: 1rem;
+}
+
+.analytics td, .analytics th {
+    padding: 1rem 1rem;
 }
 
 .analytics table th {

@@ -31,7 +31,7 @@ export class TableData {
                 pedido.contado += 1
                 pedido.cxs += codAndBox[1] + ';'
                 pedido.horas += this.formatHours() + ';'
-                console.log(pedido)
+            
                 this.update()
                 this.save()
             } 
@@ -109,6 +109,7 @@ export class TableView extends TableData {
                         row.querySelector('.caixas').textContent = caixa[i]
                         row.querySelector('.horas').textContent = horas[i]
                         row.querySelector('.conferente').textContent = 'Tiago'
+
                         this.tableAnalytics.append(row)
                     }
                     
