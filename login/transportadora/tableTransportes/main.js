@@ -1,18 +1,17 @@
-import { TableView } from "./table.js"
-import "./modal.js"
+//import { TableView } from "./table.js"
+//import "./modal.js"
 
 const buttonBack = document.querySelector('.back')
 buttonBack.onclick = () => {window.history.back()}
 
-const url = window.location.search
-const array = url.split('=')
-export const transport = array[1]
+const transport = localStorage.getItem('@transport:')
+const dateUser = localStorage.getItem('@date:')
+console.log(typeof dateUser)
 
-const dateNow = new Date().toLocaleDateString('GMT-0300')
 
-const h3 = document.querySelector('#name-transport').textContent = `${transport}`
-const date = document.querySelector('#date').textContent = dateNow
+const h3 = document.querySelector('#name-transport').textContent = `${transport}`.toUpperCase()
+const date = document.querySelector('#date').textContent = dateUser
 
-new TableView('#app')
+//new TableView('#app')
 
 

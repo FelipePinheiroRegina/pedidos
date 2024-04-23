@@ -1,5 +1,6 @@
 import { Pedidos } from "./pedidos.js"
 import { transport } from "./main.js"
+import { alertError } from "../../error/alertError.js"
 
 export class TableData {
     constructor(root){
@@ -22,21 +23,26 @@ export class TableData {
             this.pedidos = JSON.parse(localStorage.getItem('@pedidos:'))
         }
     }
-
-    onaddBox(value){
-        const codAndBox = value.split('-')
-        
+    
+    onaddBox(idpedido){
+        const codAndBox = idpedido.split('-')
+       
         this.pedidos.forEach(pedido => {
             if(pedido.id == codAndBox[0]){
-                pedido.contado += 1
+                if(pedido.contado < pedido.qtdCx){
+                    pedido.contado += 1
+                } else {
+                    document.querySelector('.error').innerHTML = 'Caixa excedida'
+                    return alertError.open()
+                }
+
                 pedido.cxs += codAndBox[1] + ';'
                 pedido.horas += this.formatHours() + ';'
-            
+                console.log(pedido)
                 this.update()
                 this.save()
             } 
-        }) 
-       
+        })  
     }
 
     delete(pedido){
@@ -77,11 +83,14 @@ export class TableView extends TableData {
     
     addBox(){
         const confirmRequest = document.querySelector('#confirm-request')
+        let idpedido = this.root.querySelector('#idpedido')
         
+        idpedido.oninput = () => alertError.close()
+
         confirmRequest.addEventListener('click', event => {
-            const { value } = this.root.querySelector('#idpedido')
+            idpedido = this.root.querySelector('#idpedido').value
             
-            this.onaddBox(value)
+            this.onaddBox(idpedido)
         })
         
     }

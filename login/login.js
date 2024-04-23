@@ -1,14 +1,22 @@
+import { alertError } from "./error/alertError.js"
+
 const buttonLogin = document.querySelector('.button-login')
+let email = document.querySelector('#idemail')
+let password = document.querySelector('#idpassword')
 
 buttonLogin.addEventListener('click', event => {
     event.preventDefault()
 
-    const email = document.querySelector('#idemail').value
-    const password = document.querySelector('#idpassword').value
-
+    email = document.querySelector('#idemail').value
+    password = document.querySelector('#idpassword').value
+    
+    console.log(email, password)
     if(email === "admin" && password === "admin"){
         window.location.href = "transportadora/index.html"
     } else {
-        alert('Unauthenticated user')
+        alertError.open()
     }
 })
+
+email.oninput = () => alertError.close()
+password.oninput = () => alertError.close()

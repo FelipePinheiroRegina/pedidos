@@ -1,26 +1,46 @@
-const buttonTransport = document.querySelector('.search-transport')
-    
-function formatDateTransport(date) {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0'); // +1 porque os meses começam de 0
-    const day = String(date.getDate()).padStart(2, '0');
+import { alertError } from "../error/alertError.js";
 
-    return `${year}-${month}-${day}`;
-}
+const optionsCarriers = ['braspress', 'rodonaves', 'sedex']
 
-const dateNow = formatDateTransport(new Date())
+optionsCarriers.forEach(carrier => {
+    const datalist = document.querySelector('#carriers')
+
+    let option = document.createElement('option')
+    option.value = carrier
+    datalist.append(option)
+})
+
+document.getElementById("iddate").setAttribute("max", new Date().toISOString().split("T")[0]);
+
+let transport = document.querySelector('#idtransport')
+let date = document.querySelector('#iddate')
+
+const buttonTransport = document.querySelector('.search-transport')    
 
 buttonTransport.addEventListener('click', event => {
     event.preventDefault()
     
-    const transport = document.querySelector('#idtransport').value
-    const date = document.querySelector('#iddate').value
+    transport = document.querySelector('#idtransport').value
+    transport = transport.toLowerCase()
+
+    const checkExistsTransp = optionsCarriers.includes(transport)
     
-    if(date == dateNow){
-        localStorage.clear()
-        window.location.href = `tableTransportes/index.html?transport=${transport}`
-    } else {
-        alert('No orders found')
+    if(!checkExistsTransp){
+        return alertError.open()
     }
+
+    date = document.querySelector('#iddate').value
+        
+    if(date == ''){
+        return alertError.open()
+    }
+
+    localStorage.clear()
+    localStorage.setItem('@transport:', transport)
+    localStorage.setItem('@date:', date)
+    window.location.href = `tableTransportes/index.html`
 })
+
+transport.oninput = () => alertError.close()
+date.oninput = () => alertError.close()
 
