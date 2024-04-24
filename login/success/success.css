@@ -1,9 +1,9 @@
-div.error.open{
+div.success.open{
     visibility: visible;
     opacity: 1;
 }
 
-div.error {
+div.success {
     font-size: 1.2rem;
     display: flex;
     gap: .5rem;

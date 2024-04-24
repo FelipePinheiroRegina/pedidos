@@ -149,3 +149,10 @@ body {
     cursor: pointer;
 }
 
+
+
+.success > i, .error > i {
+   font-size: 1.6rem;
+    font-weight: bold;
+}
+

@@ -1,6 +1,7 @@
 import { Pedidos } from './pedidos.js'
 import { transport } from "./main.js"
 import { alertError } from "../../error/alertError.js"
+import { alertSuccess } from '../../success/alertSuccess.js'
 
 export class TableData {
     constructor(root){
@@ -37,7 +38,7 @@ export class TableData {
         const checkCodExists = arrayCod.includes(codNumber)
 
         if(!checkCodExists){
-            return alertError.open('Pedido não encontrado')
+            return alertError.open(`Pedido ${codAndBox[0]} não encontrado`)
         }
         
         this.pedidos.forEach(pedido => {
@@ -45,18 +46,17 @@ export class TableData {
                 const checkBoxExists = pedido.cxs.includes(codAndBox[1])
                 
                 if(checkBoxExists){
-                    return alertError.open('Esta caixa já foi beepada')
+                    return alertError.open(`A caixa ${codAndBox[1]} do pedido ${codAndBox[0]} já foi beepada`)
                 }
 
                 if(codAndBox[1] > pedido.qtdCx){
-                    return alertError.open('Caixa inválida')
+                    return alertError.open(`Não existe caixa ${codAndBox[1]} do pedido ${codAndBox[0]}`)
                 }
 
                 if(pedido.contado < pedido.qtdCx){
                     pedido.contado += 1
-                } else {
-                    return alertError.open('Este pedido atingiu o limite total de caixas')
-                }
+                    alertSuccess.open(`Pedido: ${codAndBox[0]} - Caixa: ${codAndBox[1]}`)
+                } 
 
                 pedido.cxs += codAndBox[1] + ';'
                 pedido.horas += this.formatHours() + ';'
@@ -107,8 +107,7 @@ export class TableView extends TableData {
         const confirmRequest = document.querySelector('#confirm-request')
         let idpedido = this.root.querySelector('#idpedido')
         
-        idpedido.oninput = () => alertError.close()
-        idpedido.onfocus = () => alertError.close()
+        idpedido.onfocus = () => this.close()
 
         confirmRequest.addEventListener('click', event => {
             idpedido = this.root.querySelector('#idpedido').value
@@ -129,7 +128,7 @@ export class TableView extends TableData {
             
             row.querySelector('.detalhes').onclick = () => {
                 this.removeAltrAnalytics()
-                alertError.close()
+                this.close()
 
                 if(pedido.cxs.length > 0){
                     document.querySelector('#cod-pedido').innerHTML = pedido.id
@@ -149,7 +148,7 @@ export class TableView extends TableData {
                     
                     document.querySelector('.analytics').classList.add('open')
                 } else {
-                    return alertError.open('Este pedido não contem caixas beepadas')
+                    return alertError.open(`O pedido ${pedido.id} não contém caixas beepadas`)
                 }
                 
             }
@@ -203,4 +202,9 @@ export class TableView extends TableData {
             tr.remove()
         })
     }  
+
+    close(){
+        alertError.close() 
+        alertSuccess.close()
+    }
 }
