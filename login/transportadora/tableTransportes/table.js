@@ -28,11 +28,22 @@ export class TableData {
     
     onaddBox(idpedido){
         const codAndBox = idpedido.split('-')
-       
+        
+        const arrayCod = this.pedidos.map(pedido => {
+            return pedido.id
+        })
+
+        const codNumber = Number(codAndBox[0])
+        const checkCodExists = arrayCod.includes(codNumber)
+
+        if(!checkCodExists){
+            return alertError.open('Pedido não encontrado')
+        }
+        
         this.pedidos.forEach(pedido => {
             if(pedido.id == codAndBox[0]){
                 const checkBoxExists = pedido.cxs.includes(codAndBox[1])
-                console.log(checkBoxExists)
+                
                 if(checkBoxExists){
                     return alertError.open('Esta caixa já foi beepada')
                 }
