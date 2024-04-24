@@ -26,18 +26,19 @@ buttonTransport.addEventListener('click', event => {
     const checkExistsTransp = optionsCarriers.includes(transport)
     
     if(!checkExistsTransp){
-        return alertError.open()
+        return alertError.open('Transporte inválido')
     }
 
     date = document.querySelector('#iddate').value
         
     if(date == ''){
-        return alertError.open()
+        return alertError.open('Data inválida')
     }
 
     localStorage.clear()
     localStorage.setItem('@transport:', transport)
     localStorage.setItem('@date:', date)
+    localStorage.setItem('@pedidos:', undefined)
     window.location.href = `tableTransportes/index.html`
 })
 

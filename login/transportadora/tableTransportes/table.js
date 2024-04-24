@@ -1,4 +1,4 @@
-import { Pedidos } from "./pedidos.js"
+import { Pedidos } from './pedidos.js'
 import { transport } from "./main.js"
 import { alertError } from "../../error/alertError.js"
 
@@ -16,7 +16,9 @@ export class TableData {
     }
 
     load(){
-        if(localStorage.getItem('@pedidos:') == 'undefined' || localStorage.length == 0){
+        this.pedidos = new Pedidos()
+
+        if(localStorage.getItem('@pedidos:') == 'undefined'){
             this.pedidos =  new Pedidos()
             this.pedidos = this.pedidos[transport]
         } else {
@@ -29,16 +31,21 @@ export class TableData {
        
         this.pedidos.forEach(pedido => {
             if(pedido.id == codAndBox[0]){
+                const checkBoxExists = pedido.cxs.includes(codAndBox[1])
+                console.log(checkBoxExists)
+                if(checkBoxExists){
+                    return alertError.open('Esta caixa já foi beepada')
+                }
+
                 if(pedido.contado < pedido.qtdCx){
                     pedido.contado += 1
                 } else {
-                    document.querySelector('.error').innerHTML = 'Caixa excedida'
-                    return alertError.open()
+                    return alertError.open('Este pedido atingiu o limite total de caixas')
                 }
 
                 pedido.cxs += codAndBox[1] + ';'
                 pedido.horas += this.formatHours() + ';'
-                console.log(pedido)
+            
                 this.update()
                 this.save()
             } 
@@ -86,6 +93,7 @@ export class TableView extends TableData {
         let idpedido = this.root.querySelector('#idpedido')
         
         idpedido.oninput = () => alertError.close()
+        idpedido.onfocus = () => alertError.close()
 
         confirmRequest.addEventListener('click', event => {
             idpedido = this.root.querySelector('#idpedido').value
@@ -106,6 +114,8 @@ export class TableView extends TableData {
             
             row.querySelector('.detalhes').onclick = () => {
                 this.removeAltrAnalytics()
+                alertError.close()
+
                 if(pedido.cxs.length > 0){
                     document.querySelector('#cod-pedido').innerHTML = pedido.id
                     let caixa = pedido.cxs.split(';')
@@ -124,7 +134,7 @@ export class TableView extends TableData {
                     
                     document.querySelector('.analytics').classList.add('open')
                 } else {
-                    alert('Você não beepou nenhuma caixa desse pedido ainda')
+                    return alertError.open('Este pedido não contem caixas beepadas')
                 }
                 
             }
@@ -177,6 +187,5 @@ export class TableView extends TableData {
         this.tableAnalytics.querySelectorAll('tr').forEach(tr => {
             tr.remove()
         })
-    }
-    
+    }  
 }

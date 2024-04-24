@@ -1,7 +1,8 @@
 export const alertError = {
     element: document.querySelector('.error'),
 
-    open() {
+    open(msg) {
+        this.element.textContent = msg
         this.element.classList.add('open')
     },
 

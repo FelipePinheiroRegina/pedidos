@@ -14,7 +14,7 @@ buttonLogin.addEventListener('click', event => {
     if(email === "admin" && password === "admin"){
         window.location.href = "transportadora/index.html"
     } else {
-        alertError.open()
+        alertError.open('Email ou Senha inválidos')
     }
 })
 
