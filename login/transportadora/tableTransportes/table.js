@@ -48,6 +48,10 @@ export class TableData {
                     return alertError.open('Esta caixa já foi beepada')
                 }
 
+                if(codAndBox[1] > pedido.qtdCx){
+                    return alertError.open('Caixa inválida')
+                }
+
                 if(pedido.contado < pedido.qtdCx){
                     pedido.contado += 1
                 } else {
