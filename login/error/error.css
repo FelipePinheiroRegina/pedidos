@@ -1,20 +1,21 @@
 div.error.open{
     visibility: visible;
     opacity: 1;
-
-    transform: translateY(0);
 }
 
 div.error {
-    text-align: center;
-    font-size: 1.6rem;
-
-    position: absolute;
-    inset: 0;
-    height: 4.5rem;
-    z-index: 1;
+    font-size: 1.2rem;
+    display: flex;
+    place-items: center;
+    place-content: center;
     
-    transform: translateY(-46px);
-    transition: transform 1s;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 55px;
+    height: 3rem;
+    opacity: 0;
+    
+    transition: opacity 1s;
     
 }

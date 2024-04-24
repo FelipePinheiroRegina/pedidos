@@ -1,6 +1,12 @@
 import { alertError } from "../error/alertError.js";
 
+document.getElementById("iddate").setAttribute("max", new Date().toISOString().split("T")[0]);
+
 const optionsCarriers = ['braspress', 'rodonaves', 'sedex']
+const buttonTransport = document.querySelector('.search-transport')    
+
+let transport = document.querySelector('#idtransport')
+let date = document.querySelector('#iddate')
 
 optionsCarriers.forEach(carrier => {
     const datalist = document.querySelector('#carriers')
@@ -9,13 +15,6 @@ optionsCarriers.forEach(carrier => {
     option.value = carrier
     datalist.append(option)
 })
-
-document.getElementById("iddate").setAttribute("max", new Date().toISOString().split("T")[0]);
-
-let transport = document.querySelector('#idtransport')
-let date = document.querySelector('#iddate')
-
-const buttonTransport = document.querySelector('.search-transport')    
 
 buttonTransport.addEventListener('click', event => {
     event.preventDefault()

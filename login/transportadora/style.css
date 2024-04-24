@@ -67,6 +67,7 @@ form input {
 }
 
 form button {
+    position: relative;
     display: flex;
     align-items: center;
     gap: .5rem;

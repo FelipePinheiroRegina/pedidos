@@ -70,6 +70,7 @@ form input {
 }
 
 form button {
+    position: relative;
     background-color: var(--blue-500);
     border: none;
     border-radius: .8rem;
