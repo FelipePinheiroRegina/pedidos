@@ -18,5 +18,5 @@ buttonLogin.addEventListener('click', event => {
     }
 })
 
-email.oninput = () => alertError.close()
-password.oninput = () => alertError.close()
+email.onfocus = () => alertError.close()
+password.onfocus = () => alertError.close()

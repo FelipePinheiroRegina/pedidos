@@ -42,6 +42,6 @@ buttonTransport.addEventListener('click', event => {
     window.location.href = `tableTransportes/index.html`
 })
 
-transport.oninput = () => alertError.close()
-date.oninput = () => alertError.close()
+transport.onfocus = () => alertError.close()
+date.onfocus = () => alertError.close()
 
