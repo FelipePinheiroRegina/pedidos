@@ -135,10 +135,6 @@ body {
     background-color: var(--blue-100);
 }
 
-.body-synthetic button:hover {
-    background-color: var(--blue-300);
-}
-
 .body-synthetic tbody .detalhes > i {
     font-weight: bold;
     cursor: pointer;
