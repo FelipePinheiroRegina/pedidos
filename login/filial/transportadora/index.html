@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="loading">
 <head>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,11 +15,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
     
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="deskTransStyle.css">
-    <link rel="stylesheet" href="../error/error.css">
+    <link rel="stylesheet" href="styles-transportadora/style.css">
+    <link rel="stylesheet" href="styles-transportadora/deskTransStyle.css">
+    <link rel="stylesheet" href="../../error/error.css">
     
-    <script type="module" src="transport.js" defer></script>
+    <script type="module" src="scripts-transportadora/index.js" defer></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <title>Transportadora</title>
@@ -28,18 +28,18 @@
     <div id="app">
         <form>
             <div class="field">
+                <label for="iddate">Data</label>
+                <input type="date" name="date" id="iddate" max="">
+            </div>
+
+            <div class="field">
                 <label for="idtransport">Transportadora</label>
                 
-                <input  list="carriers" name="transport" id="idtransport">
+                <input  list="carriers" name="transport" id="idtransport" autocomplete="off">
                 
                 <datalist id="carriers">
                 
                 </datalist>
-            </div>
-
-            <div class="field">
-                <label for="iddate">Data</label>
-                <input type="date" name="date" id="iddate" max="">
             </div>
 
             <button class="search-transport">
@@ -50,6 +50,8 @@
                     <i class="ph ph-x-circle"></i>
                 </div>
             </button>
+            <span class="load">Selecione a data </span>
+            <span class="spinner"></span>
         </form>
     </div>
 </body>

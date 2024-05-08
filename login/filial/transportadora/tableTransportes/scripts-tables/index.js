@@ -1,13 +1,14 @@
-import { TableView } from "./table.js"
+import { TableView } from "./tables.js"
 import "./modal.js"
+import { TokenManager } from "../../../../scripts-login/ApiAccessToken.js"
+
+TokenManager.refreshToken()
+
+let transport = localStorage.getItem('@transport:')
 
 // if click button back, back page
 const buttonBack = document.querySelector('.back')
 buttonBack.onclick = () => {window.history.back()}
-
-// treatment of first lyrics 
-export let transport = localStorage.getItem('@transport:')
-transport = transport.charAt(0).toUpperCase() + transport.slice(1)
 
 // Formatting of date
 const dateUser = localStorage.getItem('@date:')

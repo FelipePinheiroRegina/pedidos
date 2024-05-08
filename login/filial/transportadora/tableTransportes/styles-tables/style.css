@@ -31,29 +31,31 @@ body {
 
 .body-synthetic .back {
     position: absolute;
-    top: 1rem;
-    right: 1.5rem;
+    right: 10%;
 }
 
-.body-synthetic.input-check {
+
+.body-synthetic.block-transport {
     display: flex;
     flex-direction: column;
+    margin: 3rem 0rem;
     gap: 1.6rem;
-
-    font-weight: bold;
-    text-transform: uppercase;
-    padding-top: 1rem;
 }
 
-.body-synthetic input {
-    background-color: var(--blue-100);
-    border: none;
-    border-bottom: 2px solid var(--blue-500);
+.body-synthetic.block-transport > h3 {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.body-synthetic.block-transport > span {
+   margin-left: 2rem;
+   font-size: 2rem;
+   font-style: italic;
 }
 
 .body-synthetic input, button {
     padding: 1rem 1rem;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 }
 
 .body-synthetic button {
@@ -72,31 +74,16 @@ body {
     cursor: pointer;
 }
 
-.body-synthetic.block-transport {
-    display: flex;
-    flex-direction: column;
-    margin: 2rem 0rem;
-    gap: 1.6rem;
-}
-
-.body-synthetic.block-transport > h3 {
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-.body-synthetic.block-transport > span {
-   margin-left: 2rem;
-   font-size: 3rem;
+.body-synthetic input {
+    background-color: var(--blue-100);
+    border: none;
+    border-bottom: 2px solid var(--blue-500);
 }
 
 .body-synthetic.scrol {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-content: center;
-    height: 30rem;
     width: 100%;
-    overflow: hidden;
-    overflow-y: scroll;
+    height: 30rem;
+    overflow-y: auto;
     box-shadow: inset 0px -1px 5px rgba(0, 0, 0, 0.445);
 }
 
@@ -108,22 +95,21 @@ body {
     font-size: 1.4rem;
     border-collapse: collapse;
     text-align: center;
+    width: 100%;
 }
-
 
 .body-synthetic thead {
     position: sticky;
     top: -1px;
 }
 
-.body-synthetic th {
-    padding: 1.2rem 1.2rem;
+.body-synthetic th, .body-synthetic td {
+    padding: 1rem 1rem;
 }
 
 .body-synthetic table tr {
     border: 1px solid rgba(0, 0, 0, 0.301);
     font-weight: bold;
-    
 }
 
 .body-synthetic table th {
@@ -135,7 +121,7 @@ body {
     background-color: var(--blue-100);
 }
 
-.body-synthetic tbody .detalhes > i {
+.body-synthetic tbody .details > i {
     font-weight: bold;
     cursor: pointer;
 }
@@ -145,7 +131,15 @@ body {
     cursor: pointer;
 }
 
+.body-synthetic.input-check {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
 
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-top: 1rem;
+}
 
 .success > i, .error > i {
    font-size: 1.6rem;

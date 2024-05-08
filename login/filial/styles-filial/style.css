@@ -43,28 +43,30 @@ form {
     font-weight: bold;
 }
 
-form, input::placeholder, button {
+form, select, button {
     font-size: 1.8rem;
 }
 
-form .field {
+form select {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     position: relative;
 }
 
-form input, button {
+form select, button {
     width: 100%;
     padding: 1rem 1rem;
     font-size: 1.8rem;
 }
 
-form input {
+form select {
     background-color: var(--blue-100);
     border: none;
     border-bottom: .2rem solid var(--blue-500);
 }
+
+
 
 form button {
     position: relative;
@@ -81,7 +83,6 @@ form button {
     cursor: pointer;
 }
 
-.error > i {
-    font-size: 1.6rem;
-     font-weight: bold;
- }
+
+
+

@@ -1,32 +1,32 @@
-.analytics.open{
+html.open .modal-analytics {
     opacity: 1;
     visibility: visible;
 }
 
-.analytics {
+html.open #app {
+    display: none;
+}
+
+.modal-analytics {
     opacity: 0;
     visibility: hidden;
 
     position: absolute;
     inset: 0;
-    
     background-color: white;
-    display: grid;
-    place-content: center;
+   
 }
 
-.card {
+.modal-card {  
     position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 40rem;
-    padding: 5rem;
+    margin: 10rem auto;
+    width: 40rem; 
 }
 
 .close {
     position: absolute;
-    right: 70px;
-    top: 10px;
+    right: 5%;
+    top: 5%;
     color: var(--blue-500);
     font-size: 3rem;
     font-weight: bold;
@@ -40,15 +40,21 @@
     gap: .5rem;
 }
 
-.block-pedido > span {
+.block-pedido > #name-pedido{
+    font-size: 1.8rem;
+    font-style: italic;
+    margin-left: 2rem;
+ }
+
+.block-pedido > #cod-pedido{
    font-weight: bold;
    margin-left: 2rem;
    font-size: 3rem;
 }
 
 .scrol-analytics {
-    height: 40rem;
-    overflow: hidden;
+    height: 30rem;
+    width: 100%;
     overflow-y: scroll;
     box-shadow: inset 0px -1px 5px rgba(0, 0, 0, 0.445);
 }
@@ -57,35 +63,35 @@
    width: 1px;
 }
 
-.analytics table {
+.modal-analytics table {
     font-size: 1.4rem;
     width: 100%;
     border-collapse: collapse;
     text-align: center;
 }
 
-.analytics thead {
+.modal-analytics thead {
     position: sticky;
     top: -1px;
    
 }
 
-.analytics table tr {
+.modal-analytics table tr {
     border: 1px solid rgba(0, 0, 0, 0.178);
     font-weight: bold;
 }
 
-.analytics td, .analytics th {
+.modal-analytics td, .modal-analytics th {
     padding: 1rem 1rem;
 }
 
-.analytics table th {
-    width: 33%;
+.modal-analytics table th {
+    align-items: center;
     background-color: var(--blue-500);
     color: var(--blue-100);
 }
 
-.analytics table tbody > tr:nth-child(even) {
+.modal-analytics table tbody > tr:nth-child(even) {
     background-color: var(--blue-100);
 }
 

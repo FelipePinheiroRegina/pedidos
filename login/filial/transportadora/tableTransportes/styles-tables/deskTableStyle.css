@@ -44,11 +44,11 @@
 
     
     /* MODAL ANAYTICS */
-    .analytics {
+    .modal-analytics {
         background-image: linear-gradient(to bottom, var(--blue-100), transparent);
     }
 
-    .card {
+    .modal-card {
         width: 800px;
         background-color: var(--white);
         padding: 5rem 2rem;
@@ -63,7 +63,7 @@
         font-size: 3.6rem;
      }
 
-     .analytics table {
+     .modal-analytics table {
         font-size: 2rem;
         width: 100%;
         border-collapse: collapse;
